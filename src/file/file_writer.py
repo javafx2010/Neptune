@@ -1,9 +1,11 @@
 import shutil
 
 class FileWriter:
-    def __init__(self, path):
+    def __init__(self, path,log):
         print(path)
         self.path = path
+        self.log=log
+
 
     def put(self, file, tag):
         exts = file.split(".")[-1]
@@ -11,4 +13,4 @@ class FileWriter:
             exts = "." + exts
         dist = self.path + "/" + tag + exts
         shutil.copy(file, dist)
-        print(file + "->" + tag)
+        self.log.d(file + "->" + tag)
