@@ -4,9 +4,8 @@ from src.image import classif
 
 
 class FileScaner:
-    def __init__(self, path, exts, writer):
+    def __init__(self, path, writer):
         self.path = path
-        self.exts = exts
         self.writer = writer
 
     def scan(self):
