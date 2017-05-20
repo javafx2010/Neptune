@@ -1,4 +1,5 @@
-
+import os
+from time import gmtime, strftime
 
 class Analysiser:
 
@@ -9,4 +10,6 @@ class Analysiser:
 
 
     def put(self, file, tag):
-        self.log.d(file+"\t"+tag)
+        exts = file.split(".")[-1]
+        ctime=os.path.getctime(file)
+        self.log.d(file+"\t"+tag+"\t"+exts+"\t"+str(int(ctime)))
