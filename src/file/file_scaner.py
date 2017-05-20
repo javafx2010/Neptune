@@ -1,13 +1,18 @@
 import os
 
+from src.image import classif
+
 
 class FileScaner:
-    def __init__(self, path, exts):
+    def __init__(self, path, exts, writer):
         self.path = path
         self.exts = exts
+        self.writer = writer
 
     def scan(self):
+        class_if = classif.classif()
         for root, dirs, files in os.walk(self.path):
             for file in files:
                 if file.endswith(self.exts):
-                    print(os.path.join(root, file))
+                    tag = class_if.action(file)
+                    self.writer.put(file, tag)
