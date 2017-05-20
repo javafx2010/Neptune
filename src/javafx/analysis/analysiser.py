@@ -1,4 +1,5 @@
 import os
+from javafx.image import  classif
 from time import gmtime, strftime
 
 class Analysiser:
@@ -7,9 +8,11 @@ class Analysiser:
         print(path)
         self.path = path
         self.log=log
+        self.class_if = classif.classif()
 
 
-    def put(self, file, tag):
+    def put(self, file):
+        tag = self.class_if.action(file)
         exts = file.split(".")[-1]
         if len(exts) <=0:
             exts="invalid"

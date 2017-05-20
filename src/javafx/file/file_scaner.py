@@ -15,8 +15,7 @@ class FileScaner:
             for file in files:
                 if os.path.isfile(os.path.join(root, file)):
                     full_path = os.path.join(root, file)
-                    tag = class_if.action(full_path)
-                    self.writer.put(full_path, tag)
+                    self.writer.put(full_path)
                     counter += 1
         return counter
 
