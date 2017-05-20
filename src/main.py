@@ -1,6 +1,8 @@
-from src.file import file_scaner
-from src.log import  logger
-from src.analysis import analysiser
+#!/usr/local/bin/python3
+
+from javafx.file import file_scaner
+from javafx.log import  logger
+from javafx.analysis import analysiser
 
 if __name__ == "__main__":
     log=logger.Logger("/Users/javafx/Work/dist")
