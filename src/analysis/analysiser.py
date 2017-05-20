@@ -11,5 +11,8 @@ class Analysiser:
 
     def put(self, file, tag):
         exts = file.split(".")[-1]
+        if len(exts) <=0:
+            exts="invalid"
+
         ctime=os.path.getctime(file)
         self.log.d(file+"\t"+tag+"\t"+exts+"\t"+str(int(ctime)))
