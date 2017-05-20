@@ -10,6 +10,7 @@ class Logger:
     def d(self,line):
         print(line)
         self.file.write(line)
+        self.file.flush()
 
     def close(self):
         self.file.close()
