@@ -2,11 +2,11 @@
 
 from javafx.file import file_scaner
 from javafx.log import  logger
-from javafx.analysis import analysiser
+from javafx.file import file_writer
 
 if __name__ == "__main__":
-    log=logger.Logger("/Users/javafx/Work/dist")
-    writer = analysiser.Analysiser("/Users/javafx/Work/dist",log)
-    scaner = file_scaner.FileScaner("/Volumes/XiaoMi/图片/home/文档", writer)
+    log=logger.Logger("/Volumes/XiaoMi/图片/dist")
+    writer = file_writer.FileWriter("/Volumes/XiaoMi/图片/dist",log)
+    scaner = file_scaner.FileScaner("/Volumes/XiaoMi/图片/home", writer)
     counter = scaner.scan()
     print(counter)
