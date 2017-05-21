@@ -1,10 +1,11 @@
-
+import io
 
 class FileLoader:
 
 
-    def scan(self,path):
-        file=open(path,"rt",encoding='utf-8')
-        lines=file.readlines()
-        file.close()
-        return lines
+    def scan(self,path,callback):
+
+        with io.open(path, 'rb') as f:
+            for line in f:
+                callback(line)
+        f.close()
