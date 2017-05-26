@@ -1,5 +1,7 @@
 import shutil
-from javafx.image import  classif
+
+from src.javafx.image import classif
+
 
 class FileWriter:
     def __init__(self, path,log):

@@ -1,6 +1,6 @@
 import os
 
-from javafx.image import classif
+from src.javafx.image import classif
 
 
 class FileScaner:

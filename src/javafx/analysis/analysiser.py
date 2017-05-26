@@ -1,6 +1,7 @@
 import os
-from javafx.image import  classif
-from time import gmtime, strftime
+
+from src.javafx.image import classif
+
 
 class Analysiser:
 
