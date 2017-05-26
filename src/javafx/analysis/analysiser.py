@@ -1,5 +1,5 @@
 import os
-
+from datetime import datetime
 from src.javafx.image import classif
 
 
@@ -19,7 +19,8 @@ class Analysiser:
             exts="invalid"
 
         ctime=os.path.getctime(file)
-        self.log.d(file+"\t"+tag+"\t"+exts+"\t"+str(int(ctime)))
+        file_time=datetime.fromtimestamp(ctime).strftime('%Y-%m-%d')
+        self.log.d(file+"\t"+tag+"\t"+exts+"\t"+file_time)
 
     def flush(self):
         print("over")
