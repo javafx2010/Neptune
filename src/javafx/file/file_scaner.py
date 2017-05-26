@@ -17,5 +17,7 @@ class FileScaner:
                     full_path = os.path.join(root, file)
                     self.writer.put(full_path)
                     counter += 1
+        self.writer.flush()
+
         return counter
 

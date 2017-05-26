@@ -20,3 +20,6 @@ class Analysiser:
 
         ctime=os.path.getctime(file)
         self.log.d(file+"\t"+tag+"\t"+exts+"\t"+str(int(ctime)))
+
+    def flush(self):
+        print("over")

@@ -19,3 +19,6 @@ class FileWriter:
         dist = self.path + "/" + tag + exts
         shutil.copy(file, dist)
         self.log.d(file + "->" + dist)
+
+    def flush(self):
+        print("over")
