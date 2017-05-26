@@ -18,14 +18,16 @@ class FileWriter:
 
     def put(self, file):
         tag = self.class_if.action(file)
-        exts = file.split(".")[-1]
-        if len(exts) > 0:
+        file_exts = file.split(".")[-1]
+        exts=file_exts
+        if len(file_exts) > 0:
             exts = "." + exts
+        else:
+            file_exts=".default"
 
         ctime = os.path.getctime(file)
         file_time = datetime.fromtimestamp(ctime).strftime('%Y_%m')
-        root = self.path + "/"+file_time
-        dist = root+"/" + tag + exts
+        dist = self.path +"/"+file_exts+ "/"+file_time+"/" + tag + exts
         self.ensure_dir(dist)
         shutil.copy(file, dist)
         self.log.d(file + "->" + dist)
