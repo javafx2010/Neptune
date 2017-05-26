@@ -23,7 +23,7 @@ class FileWriter:
             exts = "." + exts
 
         ctime = os.path.getctime(file)
-        file_time = datetime.fromtimestamp(ctime).strftime('%Y_%m_%d')
+        file_time = datetime.fromtimestamp(ctime).strftime('%Y_%m')
         root = self.path + "/"+file_time
         dist = root+"/" + tag + exts
         self.ensure_dir(dist)
